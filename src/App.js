@@ -50,7 +50,7 @@ function App() {
         label="Add"
         type="primary"
         icon={<i className="fa fa-car"/>}
-        loader = {spinner && <i class="fa fa-plus"></i>}
+        loader = {spinner && <i class="fa fa-circle-o-notch fa-spin" ></i>}
         style = {style1}
         />
 
