@@ -1,11 +1,11 @@
 
-import { useState } from 'react';
+import React from 'react';
 import './App.css';
 import ButtonComponent from './ButtonComponent';
 
 
 function App() {
-  const [spinner,setSpinner] = useState(false)
+
   const style1 = {
     width: '150px',
     height: '30px'
@@ -19,14 +19,12 @@ function App() {
   }
 
   const handleClick = () => {
-    setSpinner(true)
     console.log('clicked me')
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSpinner(true)
-    alert('submit button is clicked')
+  const handleSubmit = () => {
+
+    console.log('submit button is clicked')
   }
 
 
@@ -40,6 +38,7 @@ function App() {
         <ButtonComponent
           handleClick={handleSubmit}
           icon ={<i class="fa fa-plus"></i>}
+          loader = {<i class="fa fa-circle-o-notch fa-spin" ></i>}
           type="secondary"
           style = {style2}
 
@@ -50,7 +49,7 @@ function App() {
         label="Add"
         type="primary"
         icon={<i className="fa fa-car"/>}
-        loader = {spinner && <i class="fa fa-circle-o-notch fa-spin" ></i>}
+        loader = {<i class="fa fa-circle-o-notch fa-spin" ></i>}
         style = {style1}
         />
 
